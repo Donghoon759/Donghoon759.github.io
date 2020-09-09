@@ -3,21 +3,23 @@
 <url> <loc>https://donghoon759.github.io/tags</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/categories</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/posts/2020-03-06---Vue.js-컴포넌트-간-통신/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://donghoon759.github.io/posts/2020-07-28---Nuxt.js에서-global-scss-설정/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/posts/2020-03-06---Vue.js-라이프사이클/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://donghoon759.github.io/posts/2020-07-28---Storybook-+-전역-scss-설정/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://donghoon759.github.io/posts/2020-03-06---Vue.js-데이터-바인딩/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/posts/2020-04-27---Github-Notification-(깃허브-알림)/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://donghoon759.github.io/pages/contacts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
-<url> <loc>https://donghoon759.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/posts/2020-03-06---Vue.js-데이터-바인딩/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/posts/2020-07-28---Nuxt.js에서-global-scss-설정/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/posts/2020-07-28---Storybook-+-전역-scss-설정/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/posts/2020-09-06---초보-컨트리뷰터의-Mocha-issue-해결-도전기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/posts/2020-08-22---Husky-사용/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/posts/2020-09-09---초보-컨트리뷰터의-Nuxt-docs-PR-도전기/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/pages/contacts/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/pages/about/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/contribution</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/frontend</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/frontend/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/github</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/husky</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/mocha</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/tag/nuxt-docs</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/nuxt-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/open-source</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/tag/vue-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -30,4 +32,5 @@
 <url> <loc>https://donghoon759.github.io/category/vue-js</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://donghoon759.github.io/page/1</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://donghoon759.github.io/page/2</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 </urlset>
