@@ -1,4 +1,237 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[사진찍는 웹 개발자]]></title><description><![CDATA[사람들의 꿈을 이어주는 코멘토에서 일하고 있습니다. Vue.js를 이용해 FrontEnd 개발을 하고 있습니다.]]></description><link>https://donghoon-song.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 02 Jan 2021 10:50:13 GMT</lastBuildDate><item><title><![CDATA[오픈소스를 번역할 때 유용한 Git Localize 사용법]]></title><description><![CDATA[오픈소스 번역을 도와주는 Git Localize의 사용법을 다룹니다.]]></description><link>https://donghoon-song.github.io/posts/2021-01-02---오픈소스를-번역할-때-유용한-Git-Localize-사용법/</link><guid isPermaLink="false">https://donghoon-song.github.io/posts/2021-01-02---오픈소스를-번역할-때-유용한-Git-Localize-사용법/</guid><pubDate>Fri, 01 Jan 2021 15:48:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;바로가기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0&quot; aria-label=&quot;바로가기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;바로가기&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[사진찍는 웹 개발자]]></title><description><![CDATA[사람들의 꿈을 이어주는 코멘토에서 일하고 있습니다. Vue.js를 이용해 FrontEnd 개발을 하고 있습니다.]]></description><link>https://donghoon-song.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 07 Mar 2021 15:36:07 GMT</lastBuildDate><item><title><![CDATA[Django framework로 간단한 api 만들기]]></title><description><![CDATA[Django framework를 활용해 간단한 api를 만들어보고 Django의 기본 개념을 익힙니다.]]></description><link>https://donghoon-song.github.io/posts/2021-03-07---Django-framework로-간단한-api-만들기/</link><guid isPermaLink="false">https://donghoon-song.github.io/posts/2021-03-07---Django-framework로-간단한-api-만들기/</guid><pubDate>Sun, 07 Mar 2021 13:31:00 GMT</pubDate><content:encoded>&lt;p&gt;본 포스트는 &lt;a href=&quot;https://www.inflearn.com/course/%ED%94%8C%EB%9F%AC%ED%84%B0-%EC%9E%A5%EA%B3%A0-%ED%80%B4%EC%A6%88%EC%95%B1-%EC%84%9C%EB%B2%84-%ED%92%80%EC%8A%A4%ED%83%9D&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;인프런의 플러터와 장고로 1시간만에 퀴즈 앱/서버 만들기 [무작정 풀스택] 강의&lt;/a&gt;를 듣고 내용을 정리한 것입니다. 퀴즈 모델에 관한 api를 만들어봅니다.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&quot;venv-header&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;먼저-가상환경을-설정합니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%A8%BC%EC%A0%80-%EA%B0%80%EC%83%81%ED%99%98%EA%B2%BD%EC%9D%84-%EC%84%A4%EC%A0%95%ED%95%A9%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;먼저 가상환경을 설정합니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;먼저 &lt;a href=&quot;#venv-content&quot;&gt;가상환경&lt;/a&gt;을 설정합니다.&lt;/h2&gt;
+&lt;p&gt;가상환경을 설정하는 명령어는 다음과 같습니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; 가상환경 설정
+python3 &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;m venv venv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;본인의 가상환경 이름&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; 가상환경 활성화
+source venv&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;activate&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;그리고 Django project를 cli로 생성합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; 프로젝트 생성 &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;을 꼭 적어야함&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+django&lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt;admin startproject myapi &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+python manage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py startapp quiz&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;settingspy-파일을-수정합니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#settingspy-%ED%8C%8C%EC%9D%BC%EC%9D%84-%EC%88%98%EC%A0%95%ED%95%A9%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;settingspy 파일을 수정합니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;settings.py 파일을 수정합니다.&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; 모든 호스트 허용
+ALLOWED_HOSTS &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;*&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; 타임존 변경
+TIME_ZONE &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;Asia/Seoul&apos;&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; 스태틱 파일 경로 추가
+STATIC_ROOT &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; os&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;path&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;join&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;BASE_DIR&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;staticfiles&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; INSTALLED_APPS에 &lt;span class=&quot;token string&quot;&gt;&apos;quiz&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;rest_framework&apos;&lt;/span&gt; 추가&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a id=&quot;installed-app-header&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#installed-app-content&quot;&gt;INSTALLED_APP&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a id=&quot;migration-header&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;migration을-합니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#migration%EC%9D%84-%ED%95%A9%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;migration을 합니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;#migration-content&quot;&gt;migration&lt;/a&gt;을 합니다.&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; migration 파일 생성
+python manage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py makemigrations
+&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; migration 진행
+python manage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py migrate
+&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; 서버 구동
+python manage&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py runserver&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;여기까지 하면 기본적인 서버를 만들었습니다.&lt;/p&gt;
+&lt;p&gt;&lt;a id=&quot;model-header&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;다음으로-model을-생성하겠습니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%8B%A4%EC%9D%8C%EC%9C%BC%EB%A1%9C-model%EC%9D%84-%EC%83%9D%EC%84%B1%ED%95%98%EA%B2%A0%EC%8A%B5%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;다음으로 model을 생성하겠습니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;다음으로 &lt;a href=&quot;#model-content&quot;&gt;Model&lt;/a&gt;을 생성하겠습니다.&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; quiz&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; django&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;db &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; models
+
+&lt;span class=&quot;token comment&quot;&gt;# Create your models here.&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Quiz&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Model&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    title &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;CharField&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;max_length&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    body &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;TextField&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    answer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; models&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;IntegerField&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a id=&quot;serializer-header&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;serializer-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#serializer-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;serializer 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;&lt;a href=&quot;#serializer-content&quot;&gt;Serializer&lt;/a&gt; 생성&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; serializers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rest_framework &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; serializers
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;models &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Quiz
+
+&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;QuizSerializer&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;serializers&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;ModelSerializer&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Meta&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+        model &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Quiz
+        fields &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;title&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;body&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&apos;answer&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Model과 Serializer를 만들었으니, 이제는 실제로 api를 만들어봅니다.&lt;/p&gt;
+&lt;h2 id=&quot;api-생성&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#api-%EC%83%9D%EC%84%B1&quot; aria-label=&quot;api 생성 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;api 생성&lt;/h2&gt;
+&lt;p&gt;&lt;a id=&quot;view-header&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#view-content&quot;&gt;view&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; quiz&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;views&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rest_framework&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;response &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Response
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; rest_framework&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;decorators &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; api_view
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;models &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Quiz
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;serializers &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; QuizSerializer
+&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; random
+&lt;span class=&quot;token comment&quot;&gt;# Create your views here.&lt;/span&gt;
+&lt;span class=&quot;token decorator annotation punctuation&quot;&gt;@api_view&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;GET&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;randomQuiz&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;request&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
+    totalQuizs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; Quiz&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;objects&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;all&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; sample의 두번째 인자는 length
+    randomQuizs &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; random&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sample&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;totalQuizs&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; serializer에 many&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;를 주면&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; 다수의 데이터도 직렬화해줍니다&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;
+    serializer &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; QuizSerializer&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;randomQuizs&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; many&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; Response&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;serializer&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;이제-api를-url에-연결하면-됩니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9D%B4%EC%A0%9C-api%EB%A5%BC-url%EC%97%90-%EC%97%B0%EA%B2%B0%ED%95%98%EB%A9%B4-%EB%90%A9%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;이제 api를 url에 연결하면 됩니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;이제 api를 url에 연결하면 됩니다.&lt;/h2&gt;
+&lt;p&gt;myapi내의 &lt;code class=&quot;language-text&quot;&gt;urls.py&lt;/code&gt;는 전체 app에 대한 url을 관리하고, &lt;code class=&quot;language-text&quot;&gt;quiz/urls.py&lt;/code&gt;는 quiz app에 대한 url만 관리합니다.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; quiz&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;urls&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; django&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;urls &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; include
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;views &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; randomQuiz
+
+urlpatterns &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;&amp;lt;int:id&gt;/&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; randomQuiz&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; myapi&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;urls&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; django&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;contrib &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; admin
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; django&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;urls &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; path&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; include
+
+urlpatterns &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;admin/&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; admin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;site&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;urls&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    path&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;quiz/&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; include&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;quiz.urls&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;a id=&quot;dynamic-url-header&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;#dynamic-url-content&quot;&gt;django에서 동적 url 작성법&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;api-개발을-완료했습니다-이제-model-data를-생성하기-위해-admin을-등록해봅니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#api-%EA%B0%9C%EB%B0%9C%EC%9D%84-%EC%99%84%EB%A3%8C%ED%96%88%EC%8A%B5%EB%8B%88%EB%8B%A4-%EC%9D%B4%EC%A0%9C-model-data%EB%A5%BC-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0-%EC%9C%84%ED%95%B4-admin%EC%9D%84-%EB%93%B1%EB%A1%9D%ED%95%B4%EB%B4%85%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;api 개발을 완료했습니다 이제 model data를 생성하기 위해 admin을 등록해봅니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;api 개발을 완료했습니다. 이제 model data를 생성하기 위해 admin을 등록해봅니다.&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;//&lt;/span&gt; quiz&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;admin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;py
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; django&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;contrib &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; admin
+&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;models &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; Quiz
+
+&lt;span class=&quot;token comment&quot;&gt;# Register your models here.&lt;/span&gt;
+admin&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;site&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;register&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;Quiz&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;model이 변경되었기 떄문에 migration을 한번 더 진행합니다.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/32301380/110243829-6d95e600-7f9f-11eb-90a3-7aad363ddebe.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;이제-admin에-접속할-수-있는-슈퍼계정을-만듭니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%9D%B4%EC%A0%9C-admin%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%A0-%EC%88%98-%EC%9E%88%EB%8A%94-%EC%8A%88%ED%8D%BC%EA%B3%84%EC%A0%95%EC%9D%84-%EB%A7%8C%EB%93%AD%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;이제 admin에 접속할 수 있는 슈퍼계정을 만듭니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;이제 admin에 접속할 수 있는 슈퍼계정을 만듭니다.&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;python manage.py createsuperuser&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;서버를-구동해봅니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%84%9C%EB%B2%84%EB%A5%BC-%EA%B5%AC%EB%8F%99%ED%95%B4%EB%B4%85%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;서버를 구동해봅니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;서버를 구동해봅니다.&lt;/h2&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;text&quot;&gt;&lt;pre class=&quot;language-text&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;python manage.py runserver&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2 id=&quot;어드민에-접속해서-model을-만들어봅니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EC%96%B4%EB%93%9C%EB%AF%BC%EC%97%90-%EC%A0%91%EC%86%8D%ED%95%B4%EC%84%9C-model%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B4%85%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;어드민에 접속해서 model을 만들어봅니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;어드민에 접속해서 Model을 만들어봅니다.&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/32301380/110244000-13e1eb80-7fa0-11eb-8ed6-ab76b5ccdbcb.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;model-data를-4개-이상-만들고-quiz3을-호출해봅니다&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#model-data%EB%A5%BC-4%EA%B0%9C-%EC%9D%B4%EC%83%81-%EB%A7%8C%EB%93%A4%EA%B3%A0-quiz3%EC%9D%84-%ED%98%B8%EC%B6%9C%ED%95%B4%EB%B4%85%EB%8B%88%EB%8B%A4&quot; aria-label=&quot;model data를 4개 이상 만들고 quiz3을 호출해봅니다 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;Model data를 4개 이상 만들고 “/quiz/3”을 호출해봅니다.&lt;/h2&gt;
+&lt;p&gt;api가 잘 작동하는 것을 확인할 수 있습니다!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/32301380/110244192-e5b0db80-7fa0-11eb-8e5b-4acb4ae19639.png&quot; alt=&quot;image&quot;&gt;&lt;/p&gt;
+&lt;p&gt;이렇게 django framework로 model 생성 및 api를 만들어보았습니다. 코드를 따라치다가 원리가 궁금해서 내용을 정리해보았습니다. 다음에는 flutter app부분도 내용을 정리할까 합니다.&lt;/p&gt;
+&lt;h2 id=&quot;내용-정리&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%82%B4%EC%9A%A9-%EC%A0%95%EB%A6%AC&quot; aria-label=&quot;내용 정리 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;내용 정리&lt;/h2&gt;
+&lt;p&gt;&lt;a id=&quot;venv-content&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#venv-header&quot;&gt;돌아가기&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+가상환경이란
+&lt;/summary&gt;
+가상환경은 해당 프로젝트의 Python 개발환경을 구축하기 위해 모듈을 독립적으로 관리하는 환경입니다. 가상환경을 설정하는 이유는 각 모듈이 다른 모듈에 의존성을 가지고 있기 때문에 이것저것 설치하다가 충돌이 날 수 있기 때문입니다.
+&lt;/details&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;a id=&quot;installed-app-content&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#installed-app-header&quot;&gt;돌아가기&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+INSTALLED_APPS란
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.djangoproject.com/ko/3.1/intro/tutorial02/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;참고&lt;/a&gt;&lt;br/&gt;
+INSTALLED_APPS는 Django와 함께 딸려오는 다음의 앱들 등을 포함합니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;django.contrib.admin - 관리용 사이트&lt;/li&gt;
+&lt;li&gt;django.contrib.auth - 인증 시스템&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;그외 앱들
+…&lt;/p&gt;
+&lt;p&gt;Django 인스턴스에서 활성화된 모든 Django application들의 이름을 담고 있습니다.&lt;/p&gt;
+&lt;/details&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;a id=&quot;migration-content&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#migration-header&quot;&gt;돌아가기&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+migration이란
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.djangoproject.com/ko/3.1/intro/tutorial02/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;참고&lt;/a&gt;&lt;br/&gt;
+Django framework는 기본적으로 SQLite를 사용하도록 구성되어 있습니다. migrate 명령어를 실행하면 INSTALLED_APPS를 참고해 필요한 데이터베이스 테이블을 생성합니다.&lt;/p&gt;
+&lt;/details&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;a id=&quot;model-content&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#model-header&quot;&gt;돌아가기&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+Model field reference
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.djangoproject.com/en/3.1/ref/models/fields&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;참고&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CharField&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;class CharField(max_length=None, **options)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;small to large string field&lt;/li&gt;
+&lt;li&gt;대량의 텍스트는 TextField를 사용할 것&lt;/li&gt;
+&lt;li&gt;max_length는 required argument&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;TextField&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;class TextField(**options)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;large textfield&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;InterField&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;class IntegerField(**options)&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;An integer&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;a id=&quot;serializer-content&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#serializer-header&quot;&gt;돌아가기&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+Serializer란
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://www.django-rest-framework.org/api-guide/serializers/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;참고&lt;/a&gt;&lt;br/&gt;
+쿼리셋, 모델 인스턴스 등의 복잡한 데이터를 JSON, XML 등의 컨텐츠 타입으로 쉽게 변환시켜주는 역할.
+여기서는 Django의 모델 데이터를 JSON 타입으로 바꿔주는(직렬화) 코드(클래스)&lt;/p&gt;
+&lt;h3 id=&quot;modelserializer&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#modelserializer&quot; aria-label=&quot;modelserializer permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;ModelSerializer&lt;/h3&gt;
+&lt;p&gt;이 class는 &lt;code class=&quot;language-text&quot;&gt;Serializer&lt;/code&gt; class와 같지만 다음 차이점이 있습니다.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;model을 기반으로 field를 자동생성합니다.&lt;/li&gt;
+&lt;li&gt;validator를 자동생성합니다.&lt;/li&gt;
+&lt;li&gt;간단한 &lt;code class=&quot;language-text&quot;&gt;.create()&lt;/code&gt;, &lt;code class=&quot;language-text&quot;&gt;.update()&lt;/code&gt; 메서드를 기본적으로 가지고 있습니다.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;따라서, 간단하게 Serializer를 만들 때 사용됩니다.&lt;/p&gt;
+&lt;/details&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;a id=&quot;view-content&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#view-header&quot;&gt;돌아가기&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+view란
+&lt;/summary&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.djangoproject.com/en/3.1/topics/http/views/&quot; target=&quot;_blank&quot; rel=&quot;nofollow noopener noreferrer&quot;&gt;참고&lt;/a&gt;&lt;br/&gt;
+프론트엔드 개발자로서 view란 view template을 의미하는 줄 알았지만, Django에서의 view function은 &lt;strong&gt;Web request를 받고 Web response를 return&lt;/strong&gt;하는 역할을 합니다. express framework의 route와 유사하다는 생각이 들었습니다.&lt;/p&gt;
+&lt;/details&gt;
+&lt;br/&gt;
+&lt;p&gt;&lt;a id=&quot;dynamic-url-content&quot;&gt;&lt;/a&gt;
+&lt;a href=&quot;#dynamic-url-header&quot;&gt;돌아가기&lt;/a&gt;&lt;/p&gt;
+&lt;details&gt;
+&lt;summary&gt;
+django에서 동적 url 작성법
+&lt;/summary&gt;
+&lt;ul&gt;
+&lt;li&gt;str - ’/‘를 제외한 비어있지 않은 문자열&lt;/li&gt;
+&lt;li&gt;int - 0이상의 정수&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;slug - 아스키 문자나 숫자, 하이픈, 언더스코어 등으로 이루어진 slug string&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ex. building-your-1st-django-site&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;uuid - UUID&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;path - ’/‘를 포함한 비어있지 않은 문자열&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;str은 부분 URL path&lt;/li&gt;
+&lt;li&gt;path는 완전한 URL path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/details&gt;
+&lt;br/&gt;</content:encoded></item><item><title><![CDATA[오픈소스를 번역할 때 유용한 Git Localize 사용법]]></title><description><![CDATA[오픈소스 번역을 도와주는 Git Localize의 사용법을 다룹니다.]]></description><link>https://donghoon-song.github.io/posts/2021-01-02---오픈소스를-번역할-때-유용한-Git-Localize-사용법/</link><guid isPermaLink="false">https://donghoon-song.github.io/posts/2021-01-02---오픈소스를-번역할-때-유용한-Git-Localize-사용법/</guid><pubDate>Fri, 01 Jan 2021 15:48:00 GMT</pubDate><content:encoded>&lt;h2 id=&quot;바로가기&quot; style=&quot;position:relative;&quot;&gt;&lt;a href=&quot;#%EB%B0%94%EB%A1%9C%EA%B0%80%EA%B8%B0&quot; aria-label=&quot;바로가기 permalink&quot; class=&quot;anchor before&quot;&gt;&lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot; height=&quot;16&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/a&gt;바로가기&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&quot;#register&quot;&gt;등록하기&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&quot;#translate&quot;&gt;번역하기&lt;/a&gt;&lt;/li&gt;
